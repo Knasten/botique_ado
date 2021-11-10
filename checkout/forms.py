@@ -5,12 +5,12 @@ from .models import Order
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        field = ('full_name', 'email', 'phone_number',
+        fields = ('full_name', 'email', 'phone_number',
                 'street_address1', 'street_address2',
                 'town_or_city', 'postcode', 'country', 
                 'county',)
 
-    def _init__(self, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         """
         Add placeholder and classes, remove auto-generated
         labels and set autofocus on first field
